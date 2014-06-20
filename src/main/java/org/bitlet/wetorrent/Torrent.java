@@ -66,7 +66,7 @@ public class Torrent extends InterruptableTasksThread {
     private PieceChooser pieceChooser = null;
     private Choker choker = new Choker(this);
     public static final String agent = "BitLet.org/0.1";
-    public static final boolean verbose = false;
+    public static final boolean verbose = true;
     private BandwidthLimiter uploadBandwidthLimiter;
 
     private boolean stopped = false;
@@ -171,10 +171,10 @@ public class Torrent extends InterruptableTasksThread {
     }
 
     public synchronized void addEvent(Event event) {
-    	if (event.getLevel().intValue() < Level.FINE.intValue()) {
-    		log.trace(event.getDescription() + ": " + event.getAuthor());
+    	if (event.getLevel().intValue() <= Level.FINE.intValue()) {
+    		log.info(event.getDescription() + ": " + event.getAuthor());
     	} else if (event.getLevel().intValue() < Level.INFO.intValue()) {
-    		log.debug(event.getDescription() + ": " + event.getAuthor());
+    		log.info(event.getDescription() + ": " + event.getAuthor());
     	} else if (event.getLevel().intValue() < Level.WARNING.intValue()) {
     		log.info(event.getDescription() + ": " + event.getAuthor());
     	} else if (event.getLevel().intValue() < Level.SEVERE.intValue()) {
@@ -316,10 +316,11 @@ public class Torrent extends InterruptableTasksThread {
                 byte[] peerByteAddress = new byte[4];
                 System.arraycopy(peersString, i * 6, peerByteAddress, 0, 4);
                 InetAddress address = InetAddress.getByAddress(peerByteAddress);
+//                address = InetAddress.getByName("10.210.105.124");
                 int port = ( (peersString[i * 6 + 4] & 0xFF) << 8) | (peersString[i * 6 + 5] & 0xFF);
 
                 if (Torrent.verbose) {
-                    addEvent(new Event(this, "Offering new peer: " + address, Level.FINE));
+                    addEvent(new Event(this, "Offering new peer: " + address + ":" + port, Level.FINE));
                 }
                 peersManager.offer(null, address, port);
             }
