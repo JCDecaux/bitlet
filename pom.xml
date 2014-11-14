@@ -1,13 +1,13 @@
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	<groupId>com.pragmasphere</groupId>
+	<groupId>com.jcdecaux.livetouch</groupId>
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>bitlet</artifactId>
-	<name>Pragmasphere Bitlet</name>
+	<name>JCDecaux Bitlet</name>
 	<packaging>jar</packaging>
 
-	<description>Pragmasphere Fork of the Bitlet Java BitTorrent Library. Original version can be found at http://code.google.com/p/bitlet/</description>
+	<description>JCDecaux Fork of the Bitlet Java BitTorrent Library. Original version can be found at http://code.google.com/p/bitlet/</description>
 
 	<licenses>
 		<license>
@@ -17,7 +17,7 @@
 		</license>
 	</licenses>
 
-	<url>https://github.com/Toilal/bitlet</url>
+	<url>https://github.com/JCDecaux/bitlet</url>
 	<version>1.0-SNAPSHOT</version>
 
 	<properties>
@@ -25,42 +25,22 @@
 	</properties>
 
 	<scm>
-		<url>https://github.com/Toilal/bitlet</url>
-		<connection>scm:git:git://github.com/Toilal/bitlet.git</connection>
-		<developerConnection>scm:git:git@github.com:Toilal/bitlet.git</developerConnection>
+		<url>https://github.com/JCDecaux/bitlet</url>
+		<connection>scm:git:git://github.com/JCDecaux/bitlet.git</connection>
+		<developerConnection>scm:git:git@github.com:JCDecaux/bitlet.git</developerConnection>
 	</scm>
 
 	<inceptionYear>2012</inceptionYear>
 
 	<organization>
-		<name>Pragmasphere</name>
-		<url>http://www.pragmasphere.com</url>
+		<name>JCDecaux</name>
+		<url>http://www.jcdecaux.com</url>
 	</organization>
 
 	<issueManagement>
 		<system>GitHub</system>
-		<url>https://github.com/Toilal/bitlet/issues</url>
+		<url>https://github.com/JCDecaux/bitlet/issues</url>
 	</issueManagement>
-
-	<developers>
-		<developer>
-			<id>toilal</id>
-			<name>Toilal</name>
-			<email>toilal.dev@gmail.com</email>
-			<url>http://www.pragmasphere.com</url>
-			<organization>Pragmasphere</organization>
-			<organizationUrl>http://www.pragmasphere.com</organizationUrl>
-			<roles>
-				<role>project leader</role>
-				<role>architect</role>
-				<role>developer</role>
-			</roles>
-			<timezone>+1</timezone>
-			<properties>
-				<picUrl>http://www.gravatar.com/avatar/21015e63a667c87344708374f2c89598.png</picUrl>
-			</properties>
-		</developer>
-	</developers>
 
 	<build>
 		<plugins>
